@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Починим холодильник — ремонт холодильников в Москве и области</title>
+
+    <meta
+        name="description"
+        content="Ремонт холодильников в Москве и области. Выезд мастера за 30 минут, ремонт за 1 час, гарантия 1 год."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== ШАПКА ==================== -->
+    <header class="header">
+        <div class="container header__inner">
+
+            <!-- Логотип / название -->
+            <a href="#home" class="logo">
+                <span class="logo__icon">❄</span>
+                <span class="logo__text">Починим холодильник</span>
+            </a>
+
+            <!-- Навигация -->
+            <nav class="navigation" id="navigation">
+                <a href="#services" class="navigation__link">Услуги</a>
+                <a href="#price" class="navigation__link">Прайс</a>
+                <a href="#master" class="navigation__link">О мастере</a>
+                <a href="#reviews" class="navigation__link">Отзывы</a>
+                <a href="#contacts" class="navigation__link">Контакты</a>
+            </nav>
+
+            <!-- Кнопка телефона -->
+            <a href="tel:+79999979495" class="phone-button">
+                <span class="phone-button__icon">☎</span>
+                <span>7 (999) 997-94-95</span>
+            </a>
+
+            <!-- Бургер -->
+            <button
+                class="burger"
+                id="burger"
+                type="button"
+                aria-label="Открыть меню"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ==================== ГЛАВНЫЙ ЭКРАН ==================== -->
+        <section class="hero" id="home">
+
+            <div class="hero__overlay"></div>
+
+            <div class="container hero__content">
+
+                <div class="hero__text">
+
+                    <p class="hero__subtitle">
+                        Ремонт холодильников
+                    </p>
+
+                    <h1 class="hero__title">
+                        Соколов Артур
+                    </h1>
+
+                    <p class="hero__profession">
+                        Мастер по ремонту холодильников
+                    </p>
+
+                    <div class="location-badge">
+                        Москва и область
+                    </div>
+
+                    <!-- Преимущества -->
+                    <div class="advantages">
+
+                        <div class="advantage">
+                            <span class="advantage__icon">⚡</span>
+                            <span class="advantage__text">
+                                Выезд за 30 мин.
+                            </span>
+                        </div>
+
+                        <div class="advantage">
+                            <span class="advantage__icon">✓</span>
+                            <span class="advantage__text">
+                                Гарантия 1 год
+                            </span>
+                        </div>
+
+                        <div class="advantage">
+                            <span class="advantage__icon">⏱</span>
+                            <span class="advantage__text">
+                                Ремонт за 1 час
+                            </span>
+                        </div>
+
+                        <div class="advantage">
+                            <span class="advantage__icon">%</span>
+                            <span class="advantage__text">
+                                Скидки
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <!-- Телефон -->
+                    <a href="tel:+79999979495" class="hero__phone">
+                        Позвонить мастеру
+                        <span>7 (999) 997-94-95</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Подсказка о прокрутке -->
+            <a href="#services" class="scroll-down" aria-label="Прокрутить вниз">
+                <span>↓</span>
+            </a>
+
+        </section>
+
+<!-- ==================== МАРКИ ХОЛОДИЛЬНИКОВ ==================== -->
+<section class="brands">
+
+    <div class="brands__title">
+        Ремонтируем холодильники любых марок
+    </div>
+
+    <div class="brands__ticker">
+
+        <div class="brands__track">
+
+            <span class="brand">LG</span>
+            <span class="brand">Samsung</span>
+            <span class="brand">Bosch</span>
+            <span class="brand">Indesit</span>
+            <span class="brand">Hotpoint-Ariston</span>
+            <span class="brand">Liebherr</span>
+            <span class="brand">Haier</span>
+            <span class="brand">Beko</span>
+            <span class="brand">Atlant</span>
+            <span class="brand">Electrolux</span>
+            <span class="brand">Whirlpool</span>
+            <span class="brand">Siemens</span>
+
+            <!-- Повторяем список для бесконечной анимации -->
+
+            <span class="brand">LG</span>
+            <span class="brand">Samsung</span>
+            <span class="brand">Bosch</span>
+            <span class="brand">Indesit</span>
+            <span class="brand">Hotpoint-Ariston</span>
+            <span class="brand">Liebherr</span>
+            <span class="brand">Haier</span>
+            <span class="brand">Beko</span>
+            <span class="brand">Atlant</span>
+            <span class="brand">Electrolux</span>
+            <span class="brand">Whirlpool</span>
+            <span class="brand">Siemens</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- ==================== УСЛУГИ ==================== -->
+        <section class="section services" id="services">
+
+            <div class="container">
+
+                <p class="section__label">
+                    Что ремонтируем
+                </p>
+
+                <h2 class="section__title">
+                    Услуги
+                </h2>
+
+                <p class="section__description">
+                    Поможем быстро вернуть холодильник в рабочее состояние.
+                    Точную стоимость ремонта мастер назовет после диагностики.
+                </p>
+
+                <div class="services__grid">
+
+                    <article class="service-card">
+                        <div class="service-card__icon">❄</div>
+                        <h3>Холодильник не морозит</h3>
+                        <p>
+                            Найдем причину неисправности и устраним её.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon">🔧</div>
+                        <h3>Ремонт компрессора</h3>
+                        <p>
+                            Диагностика и ремонт основных узлов холодильника.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon">🌡</div>
+                        <h3>Проблемы с температурой</h3>
+                        <p>
+                            Холодильник перемораживает или плохо охлаждает.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon">💧</div>
+                        <h3>Течет холодильник</h3>
+                        <p>
+                            Устраним протечки и засоры системы отвода воды.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon">🔌</div>
+                        <h3>Не включается</h3>
+                        <p>
+                            Проверим электронику и найдем причину неисправности.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__icon">🔊</div>
+                        <h3>Сильно шумит</h3>
+                        <p>
+                            Определим источник шума и устраним неисправность.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== ПРАЙС ==================== -->
+        <section class="section price" id="price">
+
+            <div class="container">
+
+                <p class="section__label">
+                    Стоимость
+                </p>
+
+                <h2 class="section__title">
+                    Прайс
+                </h2>
+
+                <p class="section__description">
+                    Окончательная стоимость зависит от неисправности,
+                    модели холодильника и необходимых работ.
+                </p>
+
+                <div class="price__list">
+
+                    <div class="price-item">
+                        <span class="price-item__name">
+                            Диагностика
+                        </span>
+                        <span class="price-item__value">
+                            от 0 ₽
+                        </span>
+                    </div>
+
+                    <div class="price-item">
+                        <span class="price-item__name">
+                            Ремонт холодильника
+                        </span>
+                        <span class="price-item__value">
+                            от 500 ₽
+                        </span>
+                    </div>
+
+                    <div class="price-item">
+                        <span class="price-item__name">
+                            Замена деталей
+                        </span>
+                        <span class="price-item__value">
+                            от 800 ₽
+                        </span>
+                    </div>
+
+                    <div class="price-item">
+                        <span class="price-item__name">
+                            Заправка фреоном
+                        </span>
+                        <span class="price-item__value">
+                            от 1 500 ₽
+                        </span>
+                    </div>
+
+                </div>
+
+                <p class="price__note">
+                    * Стоимость указана ориентировочно. Точную цену мастер
+                    сообщит после диагностики.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== О МАСТЕРЕ ==================== -->
+        <section class="section master" id="master">
+
+            <div class="container master__content">
+
+                <div class="master__photo">
+                    <div class="master__photo-placeholder">
+                        Фото мастера
+                    </div>
+                </div>
+
+                <div class="master__info">
+
+                    <p class="section__label">
+                        О мастере
+                    </p>
+
+                    <h2 class="section__title">
+                        Соколов Артур
+                    </h2>
+
+                    <p class="master__text">
+                        Занимаюсь ремонтом холодильников и бытовой техники.
+                        Помогаю быстро разобраться с неисправностью и вернуть
+                        технику в рабочее состояние.
+                    </p>
+
+                    <p class="master__text">
+                        Работаю аккуратно, объясняю причину поломки и заранее
+                        согласовываю стоимость ремонта.
+                    </p>
+
+                    <div class="master__features">
+
+                        <div>
+                            <strong>5+</strong>
+                            <span>лет опыта</span>
+                        </div>
+
+                        <div>
+                            <strong>1000+</strong>
+                            <span>ремонтов</span>
+                        </div>
+
+                        <div>
+                            <strong>1 год</strong>
+                            <span>гарантия</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== ОТЗЫВЫ ==================== -->
+        <section class="section reviews" id="reviews">
+
+            <div class="container">
+
+                <p class="section__label">
+                    От клиентов
+                </p>
+
+                <h2 class="section__title">
+                    Отзывы
+                </h2>
+
+                <div class="reviews__grid">
+
+                    <article class="review-card">
+                        <div class="review-card__rating">
+                            ★★★★★
+                        </div>
+
+                        <p class="review-card__text">
+                            «Мастер приехал быстро, нашел проблему и сразу
+                            все починил. Холодильник снова работает отлично.»
+                        </p>
+
+                        <p class="review-card__author">
+                            Анна
+                        </p>
+                    </article>
+
+                    <article class="review-card">
+                        <div class="review-card__rating">
+                            ★★★★★
+                        </div>
+
+                        <p class="review-card__text">
+                            «Приехал в тот же день. Все объяснил, стоимость
+                            ремонта была понятна заранее. Спасибо!»
+                        </p>
+
+                        <p class="review-card__author">
+                            Дмитрий
+                        </p>
+                    </article>
+
+                    <article class="review-card">
+                        <div class="review-card__rating">
+                            ★★★★★
+                        </div>
+
+                        <p class="review-card__text">
+                            «Быстро приехал и буквально за час решил проблему.
+                            Рекомендую мастера.»
+                        </p>
+
+                        <p class="review-card__author">
+                            Елена
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== КОНТАКТЫ ==================== -->
+        <section class="section contacts" id="contacts">
+
+            <div class="container contacts__content">
+
+                <div>
+
+                    <p class="section__label">
+                        Связаться с мастером
+                    </p>
+
+                    <h2 class="section__title">
+                        Контакты
+                    </h2>
+
+                    <p class="contacts__text">
+                        Позвоните или оставьте заявку. Мастер свяжется
+                        с вами и уточнит детали ремонта.
+                    </p>
+
+                </div>
+
+                <div class="contacts__actions">
+
+                    <a
+                        href="tel:+79999979495"
+                        class="contact-phone"
+                    >
+                        <span class="contact-phone__label">
+                            Телефон
+                        </span>
+
+                        <span class="contact-phone__number">
+                            7 (999) 997-94-95
+                        </span>
+                    </a>
+
+                    <a
+                        href="tel:+79999979495"
+                        class="contact-button"
+                    >
+                        Позвонить мастеру
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== ПОДВАЛ ==================== -->
+    <footer class="footer">
+
+        <div class="container footer__inner">
+
+            <a href="#home" class="footer__logo">
+                ❄ Починим холодильник
+            </a>
+
+            <p class="footer__text">
+                Ремонт холодильников в Москве и области
+            </p>
+
+            <a href="tel:+79999979495" class="footer__phone">
+                7 (999) 997-94-95
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

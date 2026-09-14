@@ -1,0 +1,1415 @@
+:root {
+    --blue: #1261a0;
+    --blue-dark: #084b83;
+    --blue-light: #eaf5ff;
+    --white: #ffffff;
+    --black: #17202a;
+    --gray: #68737d;
+    --gray-light: #f5f8fb;
+    --border: #dce7f0;
+    --shadow: 0 15px 40px rgba(18, 97, 160, 0.12);
+    --radius: 18px;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ШАПКА
+   ========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(220, 231, 240, 0.8);
+    z-index: 1000;
+}
+
+.header__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* Логотип */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: var(--blue-dark);
+    font-size: 20px;
+    font-weight: 800;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--blue);
+}
+
+.logo__icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: var(--blue);
+    color: white;
+    font-size: 21px;
+}
+
+.logo__text {
+    white-space: nowrap;
+}
+
+
+/* Навигация */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navigation__link {
+    position: relative;
+    color: #33414d;
+    font-size: 15px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.navigation__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: var(--transition);
+}
+
+.navigation__link:hover {
+    color: var(--blue);
+}
+
+.navigation__link:hover::after {
+    width: 100%;
+}
+
+
+/* Телефон в шапке */
+
+.phone-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 205px;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 12px;
+    background: var(--blue);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: var(--transition);
+    box-shadow: 0 8px 20px rgba(18, 97, 160, 0.2);
+}
+
+.phone-button:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+}
+
+.phone-button__icon {
+    font-size: 16px;
+}
+
+
+
+.phone-button:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+}
+
+.phone-button__icon {
+    font-size: 15px;
+}
+
+
+/* Бургер */
+
+.burger {
+    display: none;
+    width: 45px;
+    height: 45px;
+    padding: 9px;
+    border: none;
+    border-radius: 10px;
+    background: var(--blue-light);
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background: var(--blue);
+    transition: var(--transition);
+}
+
+
+/* =========================================================
+   ГЛАВНЫЙ ЭКРАН
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    /*
+       ПОКА ВМЕСТО ФОТО — ГРАДИЕНТ.
+       Позже здесь поставим фотографию открытого холодильника.
+    */
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 34, 61, 0.94) 0%,
+            rgba(4, 50, 88, 0.75) 42%,
+            rgba(4, 50, 88, 0.25) 75%,
+            rgba(4, 50, 88, 0.05) 100%
+        ),
+        url("images/refrigerator.jpg");
+
+    color: white;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(255,255,255,0.18),
+            transparent 30%
+        );
+    pointer-events: none;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    padding-top: 78px;
+    padding-bottom: 70px;
+}
+
+.hero__text {
+    width: min(650px, 100%);
+}
+
+.hero__subtitle {
+    margin-bottom: 12px;
+    color: #bfe6ff;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.hero__title {
+    margin-bottom: 10px;
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 0.98;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.hero__profession {
+    margin-bottom: 25px;
+    font-size: clamp(21px, 2.4vw, 30px);
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    margin-bottom: 35px;
+    padding: 0 17px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+}
+
+
+/* Преимущества */
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 760px;
+    margin-bottom: 35px;
+}
+
+.advantage {
+    min-height: 95px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.advantage__icon {
+    display: block;
+    margin-bottom: 5px;
+    color: #8dd4ff;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.advantage__text {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Кнопка телефона */
+
+.hero__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 60px;
+    padding: 0 25px;
+    border-radius: 14px;
+    background: white;
+    color: var(--blue-dark);
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: var(--transition);
+}
+
+.hero__phone span {
+    font-size: 18px;
+}
+
+.hero__phone:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+
+/* Стрелка вниз */
+
+.scroll-down {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    animation: scrollArrow 1.7s infinite;
+}
+
+@keyframes scrollArrow {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(7px);
+    }
+}
+
+
+/* =========================================================
+   ОБЩИЕ СТИЛИ СЕКЦИЙ
+   ========================================================= */
+
+.section {
+    padding: 110px 0;
+}
+
+.section:nth-child(even) {
+    background: var(--gray-light);
+}
+
+.section__label {
+    margin-bottom: 8px;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.section__title {
+    margin-bottom: 18px;
+    color: var(--black);
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+.section__description {
+    max-width: 680px;
+    margin-bottom: 50px;
+    color: var(--gray);
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   УСЛУГИ
+   ========================================================= */
+
+.services {
+    background: white;
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    min-height: 230px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: 0 8px 30px rgba(18, 97, 160, 0.05);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: #b9dcf5;
+    box-shadow: var(--shadow);
+}
+
+.service-card__icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 24px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: var(--black);
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.service-card p {
+    color: var(--gray);
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   ПРАЙС
+   ========================================================= */
+
+.price {
+    background: var(--gray-light);
+}
+
+.price__list {
+    max-width: 850px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 10px 35px rgba(18, 97, 160, 0.07);
+}
+
+.price-item {
+    min-height: 75px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price-item__name {
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.price-item__value {
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.price__note {
+    max-width: 850px;
+    margin-top: 15px;
+    color: var(--gray);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   О МАСТЕРЕ
+   ========================================================= */
+
+.master {
+    background: white;
+}
+
+.master__content {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.master__photo {
+    min-height: 500px;
+}
+
+.master__photo-placeholder {
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background:
+        linear-gradient(
+            135deg,
+            #dcefff,
+            #eef8ff
+        );
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.master__text {
+    max-width: 620px;
+    margin-bottom: 18px;
+    color: var(--gray);
+    font-size: 17px;
+}
+
+.master__features {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.master__features div {
+    display: flex;
+    flex-direction: column;
+}
+
+.master__features strong {
+    color: var(--blue);
+    font-size: 27px;
+    line-height: 1;
+}
+
+.master__features span {
+    margin-top: 5px;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ОТЗЫВЫ
+   ========================================================= */
+
+.reviews {
+    background: var(--gray-light);
+}
+
+.reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: 0 8px 25px rgba(18, 97, 160, 0.05);
+}
+
+.review-card__rating {
+    margin-bottom: 18px;
+    color: #ffb400;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.review-card__text {
+    min-height: 100px;
+    margin-bottom: 20px;
+    color: #495761;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.review-card__author {
+    color: var(--black);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   КОНТАКТЫ
+   ========================================================= */
+
+.contacts {
+    background:
+        linear-gradient(
+            135deg,
+            #073d69,
+            #1261a0
+        );
+    color: white;
+}
+
+.contacts .section__title {
+    color: white;
+}
+
+.contacts .section__label {
+    color: #a8dcff;
+}
+
+.contacts__content {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.contacts__text {
+    max-width: 600px;
+    color: rgba(255,255,255,0.8);
+    font-size: 17px;
+}
+
+.contacts__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-phone {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.1);
+    transition: var(--transition);
+}
+
+.contact-phone:hover {
+    background: rgba(255,255,255,0.16);
+}
+
+.contact-phone__label {
+    margin-bottom: 5px;
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+}
+
+.contact-phone__number {
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.contact-button {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: white;
+    color: var(--blue-dark);
+    font-size: 16px;
+    font-weight: 800;
+    transition: var(--transition);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    background: #f2f9ff;
+}
+
+
+/* =========================================================
+   ПОДВАЛ
+   ========================================================= */
+
+.footer {
+    padding: 35px 0;
+    background: #062f51;
+    color: white;
+}
+
+.footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.footer__logo {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.footer__text {
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+}
+
+.footer__phone {
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   АДАПТАЦИЯ — ПЛАНШЕТ / НЕБОЛЬШОЙ НОУТБУК
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .navigation {
+        gap: 18px;
+    }
+
+    .navigation__link {
+        font-size: 14px;
+    }
+
+    .phone-button {
+        padding: 0 13px;
+        font-size: 13px;
+    }
+
+    .advantages {
+        max-width: 680px;
+    }
+
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .master__content {
+        gap: 45px;
+    }
+}
+
+
+/* =========================================================
+   АДАПТАЦИЯ — ПЛАНШЕТ
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header__inner {
+        gap: 15px;
+    }
+
+    /*
+       На более узком экране обычное меню
+       превращаем в бургер.
+    */
+
+    .navigation {
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        right: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 10px;
+
+        border: 1px solid var(--border);
+        border-radius: 16px;
+
+        background: rgba(255,255,255,0.98);
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        transition: var(--transition);
+    }
+
+    /*
+       Этот класс позже добавит JavaScript.
+    */
+
+    .navigation.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .navigation__link {
+        padding: 14px 15px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .navigation__link:hover {
+        background: var(--blue-light);
+    }
+
+    .navigation__link::after {
+        display: none;
+    }
+
+    .phone-button {
+        margin-left: auto;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .hero {
+        min-height: 760px;
+    }
+
+    .hero__content {
+        padding-top: 110px;
+    }
+
+    .advantages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .master__content {
+        grid-template-columns: 1fr;
+    }
+
+    .master__photo,
+    .master__photo-placeholder {
+        min-height: 400px;
+    }
+
+    .reviews__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .review-card__text {
+        min-height: auto;
+    }
+
+    .contacts__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer__inner {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================================================
+   АДАПТАЦИЯ — ТЕЛЕФОН
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(100% - 30px, 1180px);
+    }
+
+    .header {
+        height: 64px;
+    }
+
+    .logo {
+        font-size: 16px;
+        gap: 7px;
+    }
+
+    .logo__icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        font-size: 18px;
+    }
+
+    .logo__text {
+        max-width: 190px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /*
+       На телефоне оставляем только бургер.
+       Телефон будет в самом первом экране.
+    */
+
+    .phone-button {
+        display: none;
+    }
+
+    .burger {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+    }
+
+    .navigation {
+        top: 64px;
+        left: 15px;
+        right: 15px;
+    }
+
+
+    /* ---------- HERO ---------- */
+    .hero {
+        min-height: 780px;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(3, 29, 52, 0.75) 0%,
+                rgba(3, 45, 78, 0.35) 50%,
+                rgba(3, 45, 78, 0.15) 100%
+            ),
+            url("images/refrigerator.jpg");
+
+        background-size: auto 100%;
+        background-position: 65% center;
+        background-repeat: no-repeat;
+    }
+
+    /* здесь дальше идут другие мобильные стили */
+    
+}
+
+    .hero__content {
+        padding-top: 105px;
+        padding-bottom: 80px;
+    }
+
+    .hero__subtitle {
+        font-size: 15px;
+    }
+
+    .hero__title {
+        margin-bottom: 12px;
+        font-size: clamp(42px, 13vw, 62px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero__profession {
+        margin-bottom: 20px;
+        font-size: 21px;
+    }
+
+    .location-badge {
+        margin-bottom: 25px;
+    }
+
+    .advantages {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+        margin-bottom: 25px;
+    }
+
+    .advantage {
+        min-height: 85px;
+        padding: 12px;
+    }
+
+    .advantage__icon {
+        font-size: 19px;
+    }
+
+    .advantage__text {
+        font-size: 12px;
+    }
+
+    .hero__phone {
+        width: 100%;
+        min-height: 58px;
+        justify-content: center;
+        padding: 0 15px;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .hero__phone span {
+        font-size: 15px;
+    }
+
+    .scroll-down {
+        bottom: 18px;
+    }
+
+
+    /* ---------- СЕКЦИИ ---------- */
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .section__label {
+        font-size: 12px;
+    }
+
+    .section__title {
+        margin-bottom: 15px;
+        font-size: 36px;
+    }
+
+    .section__description {
+        margin-bottom: 35px;
+        font-size: 15px;
+    }
+
+
+    /* ---------- УСЛУГИ ---------- */
+
+    .services__grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 23px;
+    }
+
+    .service-card__icon {
+        width: 47px;
+        height: 47px;
+        margin-bottom: 17px;
+    }
+
+    .service-card h3 {
+        font-size: 18px;
+    }
+
+
+    /* ---------- ПРАЙС ---------- */
+
+    .price-item {
+        min-height: 68px;
+        padding: 0 17px;
+    }
+
+    .price-item__name {
+        font-size: 14px;
+    }
+
+    .price-item__value {
+        font-size: 16px;
+    }
+
+    .price__note {
+        font-size: 12px;
+    }
+
+
+    /* ---------- МАСТЕР ---------- */
+
+    .master__photo,
+    .master__photo-placeholder {
+        min-height: 330px;
+    }
+
+    .master__text {
+        font-size: 15px;
+    }
+
+    .master__features {
+        gap: 25px;
+    }
+
+    .master__features strong {
+        font-size: 23px;
+    }
+
+
+    /* ---------- ОТЗЫВЫ ---------- */
+
+    .review-card {
+        padding: 23px;
+    }
+
+
+    /* ---------- КОНТАКТЫ ---------- */
+
+    .contacts__content {
+        gap: 30px;
+    }
+
+    .contacts__text {
+        font-size: 15px;
+    }
+
+    .contact-phone {
+        padding: 20px;
+    }
+
+    .contact-phone__number {
+        font-size: 21px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding: 28px 0;
+    }
+
+    .footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .footer__text {
+        font-size: 13px;
+    }
+
+    .footer__phone {
+        font-size: 16px;
+    }
+
+/* =========================================================
+   ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .logo__text {
+        max-width: 165px;
+    }
+
+    .hero__title {
+        font-size: 40px;
+    }
+
+    .hero__profession {
+        font-size: 19px;
+    }
+
+    .advantages {
+        gap: 7px;
+    }
+
+    .advantage {
+        min-height: 80px;
+        padding: 9px;
+    }
+
+    .advantage__text {
+        font-size: 11px;
+    }
+
+    .hero__phone {
+        flex-direction: column;
+        gap: 2px;
+        padding: 9px;
+    }
+}
+
+
+/* =========================================================
+   ДОСТУПНОСТЬ
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* =========================================================
+   БЕГУЩАЯ СТРОКА — МАРКИ ХОЛОДИЛЬНИКОВ
+   ========================================================= */
+
+.brands {
+    width: 100%;
+    padding: 30px 0;
+    overflow: hidden;
+    background: #f7fbff;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.brands__title {
+    margin-bottom: 20px;
+    padding: 0 20px;
+    text-align: center;
+    color: var(--gray);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.brands__ticker {
+    width: 100%;
+    overflow: hidden;
+}
+
+.brands__track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 55px;
+
+    /*
+       ВАЖНО:
+       Строка постоянно движется влево.
+    */
+    animation: brandsScroll 20s linear infinite;
+}
+
+.brand {
+    flex-shrink: 0;
+    color: #51616e;
+    font-size: 21px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+/* Точки между марками */
+
+.brand::after {
+    content: "•";
+    display: inline-block;
+    margin-left: 55px;
+    color: #7db9df;
+}
+
+
+/* =========================================================
+   АНИМАЦИЯ
+   ========================================================= */
+
+@keyframes brandsScroll {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .brands {
+        padding: 24px 0;
+    }
+
+    .brands__title {
+        margin-bottom: 15px;
+        font-size: 11px;
+    }
+
+    .brands__track {
+        gap: 40px;
+
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .brand::after {
+        margin-left: 40px;
+    }
+
+}
+@keyframes brandsMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/*
+   Если человек отключил анимации
+   в настройках устройства,
+   строка останется неподвижной.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .brands__track {
+        animation: none;
+    }
+
+}
+
+
+/* =========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .brands {
+        padding: 24px 0;
+    }
+
+    .brands__title {
+        padding: 0 15px;
+        margin-bottom: 15px;
+        font-size: 11px;
+    }
+
+    .brands__track {
+        gap: 40px;
+        animation-duration: 23s;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .brand::after {
+        right: -23px;
+    }
+
+}
